@@ -1,0 +1,80 @@
+body{
+    /* background-image: linear-gradient(red,yellow);
+     */
+     background-image: url(https://w.forfun.com/fetch/ae/ae2cbe4c74a79df332455ab8fe742e7c.jpeg);
+     
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
+  .App {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .maindiv{
+    margin-top: 50px 10px 20px 10px;
+    width: 80%;
+    height: 80%;
+    background-color: rgba(53, 56, 56, 0.8);
+    box-shadow: 0px 0px 40px rgba(10, 10, 10, 0.5);
+    border-radius: 9px;
+    overflow: auto;
+  
+  }
+  .todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    flex-direction: row;
+    margin: 10px;
+  
+  }
+  .inputab{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  .todo_icon{
+    display: flex;
+    align-items: center;
+    width: 90px;
+    justify-content: space-evenly;
+  }    
+  
+  .todoinput{
+    text-align: center;
+    width: 82%;
+    font-size: 30px;
+    
+    border: 0px;
+    height: 45px;
+  }
+  .addButton{
+    /* padding-left: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px; */
+   display: flex;
+   align-items: center;
+  }
+  
+  .headingtodo{
+    font-family: emoji;
+    font-size: 40px;
+    color: rgb(230 216 216 / 96%)
+  
+  
+  }
+  
+  .todo{
+    margin: 3% 13% 3% 10%;
+    /* background-color: rgb(195 15 48 / 50%); */
+    padding-left: 2%;
+    color: white ; 
+    border: 2px solid;
+    
+  
+  }
