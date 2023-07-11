@@ -20,12 +20,25 @@ import { createSlice } from "@reduxjs/toolkit";
             const id=  action.payload.id
 
             state.data= state.data.filter((e)=>e.id !=id)
+         },
+         edit:(state,action)=>{
+    
+               const { id, name } = action.payload;
+
+               
+               state.data = state.data.map((e) => {
+                 if (e.id == id) {
+                   return {...e, name };
+                 }
+                 return e;
+               });
+           },
          }
 
         
-    }
+    
  })
 
- export const {addTask,remove} = todoSlice.actions
+ export const {addTask,remove,edit} = todoSlice.actions
 
  export default todoSlice.reducer

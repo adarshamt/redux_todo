@@ -1,7 +1,10 @@
 import  { useState } from 'react'
 
-import { addTask,remove } from '../store/todo'
+import { addTask,remove,edit } from '../store/todo'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { BiEdit } from 'react-icons/bi';
+import{RiDeleteBin5Fill} from 'react-icons/ri';
 
 import './Home.css'
 
@@ -17,7 +20,7 @@ const Home = () => {
     const addHandle = ()=> {
 
 
-        dispatch(addTask({id:Date.now(),name:input}))
+        dispatch(addTask({name:input}))
         
 
         setInput("")
@@ -29,6 +32,36 @@ const Home = () => {
       
        dispatch(remove({id:id}))
     }
+
+    const editHandle = (id) =>{
+
+      const editData = data.filter((e) => e.id == id)
+      console.log("the editdata",editData[0].name)   
+
+       if (editData) {
+        
+      
+
+         
+        const newName = prompt('Enter the new task ', editData[0].name);
+        
+        console.log("NEW ITMES", editData[0].id)
+        
+        if (newName) {
+
+          dispatch(edit({ id: editData[0].id, name: newName }));
+
+           window.alert("content updated successfully")
+
+        }
+      }
+
+      
+                                 
+    }
+  
+
+  
 
 
 
@@ -68,9 +101,13 @@ const Home = () => {
               <div  className='todo'>
 
                <h2>{itm.name}</h2>
-               <div className='todo_icon'>
+               <div style={{fontSize:"25px"}} className='todo_icon'>
+
+              <BiEdit onClick={()=>editHandle(itm.id)}   />
+
+              <RiDeleteBin5Fill onClick={()=>deleteHandle(itm.id)}  />
               
-              <button onClick={()=>deleteHandle(itm.id) }> - </button> 
+
               </div>
               </div>
           </div>
