@@ -19,11 +19,21 @@ const Home = () => {
 
     const addHandle = ()=> {
 
+      if (input){
+
+      
+
 
         dispatch(addTask({name:input}))
         
 
         setInput("")
+        
+      }
+
+      else{
+        return 0
+      }
 
     }
 
